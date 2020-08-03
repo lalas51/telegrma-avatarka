@@ -26,10 +26,6 @@ args = parser.parse_args()
 client = TelegramClient("carpediem", args.api_id, args.api_hash)
 client.start()
 
-
-async def main():
-    prev_update_time = datetime.now() - timedelta(minutes=1)
-
     while True:
         if time_has_changed(prev_update_time):
             bts = generate_time_image_bytes(datetime.now(args.tz).replace(tzinfo=None))
