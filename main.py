@@ -29,13 +29,13 @@ client.start()
 async def main():
  prev_update_time = datetime.now() - timedelta(minutes=1)
 while True:
- if time_has_changed(prev_update_time):
- bts = generate_time_image_bytes(datetime.now(args.tz).replace(tzinfo=None))
- await client(DeletePhotosRequest(await client.get_profile_photos('me')))
- file = await client.upload_file(bts)
- await client(UploadProfilePhotoRequest(file))
- prev_update_time = datetime.now()
- time.sleep(1)
+     if time_has_changed(prev_update_time):
+     bts = generate_time_image_bytes(datetime.now(args.tz).replace(tzinfo=None))
+     await client(DeletePhotosRequest(await client.get_profile_photos('me')))
+     file = await client.upload_file(bts)
+     await client(UploadProfilePhotoRequest(file))
+     prev_update_time = datetime.now()
+     time.sleep(1)
             
 
 if __name__ == '__main__':
