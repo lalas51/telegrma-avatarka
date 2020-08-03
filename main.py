@@ -29,7 +29,7 @@ client.start()
 async def main():
     prev_update_time = datetime.now() - timedelta(minutes=1)
     
-while True:
+while Try:
     if time_has_changed(prev_update_time):
     bts = generate_time_image_bytes(datetime.now(args.tz).replace(tzinfo=None))
     await client(DeletePhotosRequest(await client.get_profile_photos('me')))
