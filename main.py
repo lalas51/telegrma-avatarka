@@ -36,7 +36,7 @@ async def main():
     
 
 while True:
-   if time_has_changed(prev_update_time):
+   if time_has_changed("prev_update_time"):
        bts = generate_time_image_bytes(datetime.now(args.tz).replace(tzinfo=None))
        
             
